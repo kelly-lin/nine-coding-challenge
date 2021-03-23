@@ -1,4 +1,4 @@
-function GetShows(showList) {
+function filterShows(showList) {
   let data = {
     response: []
   };
@@ -18,6 +18,10 @@ function GetShows(showList) {
   }
   
   return data;
-}
+} 
+module.exports.filterShows = filterShows;
 
-module.exports.GetShows = GetShows;
+function getShows(req, res) {
+
+}
+module.exports.getShows = getShows;

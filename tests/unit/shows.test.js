@@ -11,7 +11,7 @@ let sampleResponse = fs.readFileSync(sampleResponseFilepath);
 const data = JSON.parse(sampleData);
 const expectedResponse = JSON.parse(sampleResponse);
 
-const ret = shows.GetShows(data.payload);
+const ret = shows.filterShows(data.payload);
 
 test('shows to match sample response', () => {
   expect(ret).toEqual(expectedResponse);
