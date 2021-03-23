@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const shows = require('../../controllers/shows');
+const shows = require('../../services/shows');
 
 const sampleDataFilepath = path.join(__dirname, 'data/sample_request.json');
 const sampleResponseFilepath = path.join(__dirname, 'data/sample_response.json');
