@@ -29,3 +29,13 @@ test('null returns true', () => {
   const string = null;
   expect(IsValidJsonString(string)).toBeTruthy();
 });
+
+test('empty object returns true', () => {
+  const string = {};
+  expect(IsValidJsonString(string)).toBeTruthy();
+});
+
+test('valid object returns true', () => {
+  const string = { name: 'kelly' };
+  expect(IsValidJsonString(string)).toBeTruthy();
+});
