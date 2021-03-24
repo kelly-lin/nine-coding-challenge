@@ -1,22 +1,17 @@
 const express = require('express');
 const showsRouter = require('./routes/shows');
 const errors = require('./utility/errors');
+const errorHandlers = require('./middleware/error-handlers');
 
 const app = express();
 
-// Middleware
+// Middleware.
 app.use(express.json());
 
 // Middleware for catching for JSON errors in requests.
-app.use((err, req, res, next) => {
-  if(err) {
-    res.status(400).send(errors.badJsonRequest);
-  } else {
-    next();
-  }
-})
+app.use(errorHandlers.handleJsonError);
 
-// Routes
+// Routes.
 app.use('/', showsRouter);
 
 module.exports = app;
