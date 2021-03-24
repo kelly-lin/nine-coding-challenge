@@ -1,18 +1,8 @@
-const fs = require('fs');
-const path = require('path');
+const { request, expectedResponse } = require('../fixtures/shows');
 const shows = require('../../services/shows');
 
-const sampleDataFilepath = path.join(__dirname, 'data/sample_request.json');
-const sampleResponseFilepath = path.join(__dirname, 'data/sample_response.json');
-
-let sampleData = fs.readFileSync(sampleDataFilepath);
-let sampleResponse = fs.readFileSync(sampleResponseFilepath);
-
-const data = JSON.parse(sampleData);
-const expectedResponse = JSON.parse(sampleResponse);
-
-const ret = shows.filterShows(data.payload);
+const response = shows.filterShows(request.payload);
 
 test('shows to match sample response', () => {
-  expect(ret).toEqual(expectedResponse);
+  expect(response).toEqual(expectedResponse);
 });
