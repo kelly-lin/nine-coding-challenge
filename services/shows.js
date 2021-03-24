@@ -15,6 +15,8 @@ function getShowDetails(show) {
 }
 
 function filterShows(showList) {
+  if(!Array.isArray(showList)) throw new TypeError();
+
   let data = {
     response: []
   };

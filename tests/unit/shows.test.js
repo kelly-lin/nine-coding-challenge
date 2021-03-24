@@ -46,3 +46,7 @@ test('null object returns all null property values', () => {
   
   expect(showDetails).toEqual(expected);
 });
+
+test('non array passed throws exception', () => {
+  expect(() => shows.filterShows({})).toThrow(TypeError);
+});
