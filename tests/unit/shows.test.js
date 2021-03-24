@@ -34,3 +34,15 @@ test('properties that exist returns the correct details', () => {
   
   expect(showDetails).toEqual(expected);
 });
+
+test('null object returns all null property values', () => {
+  const expected = {
+    image: null,
+    slug: null,
+    title: null
+  }
+
+  const showDetails = shows.getShowDetails({});
+  
+  expect(showDetails).toEqual(expected);
+});
