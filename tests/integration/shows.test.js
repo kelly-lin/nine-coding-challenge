@@ -43,7 +43,7 @@ test('Valid json string request returns no payload error', async () => {
   expect(data.status).toBe(400);
 });
 
-test('payload which is not an array throws error', async () => {
+test('Payload which is not an array throws error', async () => {
   const bodyContent = {
     payload: {
       name: 'kelly'
@@ -53,6 +53,17 @@ test('payload which is not an array throws error', async () => {
   const expectedBody = errors.payloadNotArray;
 
   const data = await request(app).post('/').send(bodyContent);
+
+  expect(data.body).toEqual(expectedBody);
+  expect(data.status).toBe(400);
+});
+
+test('Invalid json returns bad Json request error', async () => {
+  const expectedBody = errors.badJsonRequest;
+
+  const data = await request(app).post('/')
+    .set('Content-Type', 'application/json')
+    .send('bodyContent');
 
   expect(data.body).toEqual(expectedBody);
   expect(data.status).toBe(400);
