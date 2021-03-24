@@ -1,5 +1,5 @@
 # Welcome to my solution to the 9Digital Coding Challenge
-This repository contains the REST API source code for returning a filtered list of tv shows. The scope of this application is to take a post request with a JSON payload, containing information about tv shows and return a list of shows which have DRM and have 1 or more episodes in JSON.
+This repository contains the REST API source code for returning a filtered list of tv shows. The scope of this application is to take a post request with a JSON payload, containing information about tv shows and return a list of shows which have DRM and have 1 or more episodes in JSON. The endpoint for API calls are at the root path.
 
 # Important notes
 Requests have be to submitted to the end point with the following JSON structure:
@@ -32,11 +32,11 @@ The REST API extracts the following properties from the tvShow objects ("image.s
 * NodeJS
 * dotenv
 
-# Installation
+## Installation
 1. Clone repository
 2. Install dependencies using `npm install`
 
-# Running
+## Running
 To run the server, run the following command from the terminal.
 ```
 npm start
