@@ -23,13 +23,7 @@ function filterShows(showList) {
     const currentShow = showList[i];
     
     if(currentShow.drm && currentShow.episodeCount > 0) {
-
-      const showDetails = {
-        image: currentShow.image.showImage,
-        slug: currentShow.slug,
-        title: currentShow.title
-      }
-  
+      const showDetails = getShowDetails(currentShow)
       data.response.push(showDetails);
     }
   }
