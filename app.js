@@ -6,7 +6,7 @@ const errors = require('./utility/errors');
 app.use(express.json());
 app.use((err, req, res, next) => {
   if(err) {
-    res.send(errors.badJsonRequest);
+    res.status(400).send(errors.badJsonRequest);
   } else {
     next();
   }
