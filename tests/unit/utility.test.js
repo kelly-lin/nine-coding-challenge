@@ -19,3 +19,13 @@ test('empty string returns false', () => {
   const string = '';
   expect(IsValidJsonString(string)).toBeFalsy();
 });
+
+test('undefined returns false', () => {
+  const string = undefined;
+  expect(IsValidJsonString(string)).toBeFalsy();
+});
+
+test('null returns true', () => {
+  const string = null;
+  expect(IsValidJsonString(string)).toBeTruthy();
+});
