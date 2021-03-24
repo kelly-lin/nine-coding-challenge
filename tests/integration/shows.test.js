@@ -1,8 +1,8 @@
 const app = require('../../app');
 const request = require('supertest');
 const { 
-  request: sampleRequest, 
-  expectedResponse: sampleResponse 
+  sampleRequest, 
+  sampleResponse 
 } = require('../fixtures/shows');
 const errors = require('../../utility/errors');
 
