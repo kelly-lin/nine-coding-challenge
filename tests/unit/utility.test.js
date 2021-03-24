@@ -39,3 +39,8 @@ test('valid object returns true', () => {
   const string = { name: 'kelly' };
   expect(IsValidJsonString(string)).toBeTruthy();
 });
+
+test('incomplete json string returns false', () => {
+  const string = '{ "name": "kel }';
+  expect(IsValidJsonString(string)).toBeFalsy();
+});
