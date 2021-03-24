@@ -1,7 +1,6 @@
 const express = require('express');
 const showsRouter = require('./routes/shows');
 const errors = require('./utility/errors');
-const errorHandlers = require('./middleware/error-handlers');
 
 const app = express();
 
@@ -9,7 +8,13 @@ const app = express();
 app.use(express.json());
 
 // Middleware for catching for JSON errors in requests.
-app.use(errorHandlers.handleJsonError);
+app.use((err, req, res, next) => {
+  if(err) {
+    res.status(400).send(errors.badJsonRequest);
+  } else {
+    next();
+  }
+});
 
 // Routes.
 app.use('/', showsRouter);
